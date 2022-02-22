@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="simplepopup" translate="label" sortOrder="1" showInDefault="1">
+            <label>Simple Popup</label>
+            <tab>dathard</tab>
+            <resource>Dathard_LogCleaner::config</resource>
+            <group id="base" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="0">
+                <frontend_model>Dathard\Base\Block\Adminhtml\System\Config\Messages</frontend_model>
+            </group>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1">
+                <label>General</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1">
+                    <label>Enable extension</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="cookie_timeout" translate="label comment" type="text" sortOrder="20" showInDefault="1">
+                    <label>Cookie Timeout (seconds)</label>
+                    <validate>integer no-whitespace </validate>
+                    <comment>After the user closes the popup, it will reappear after the specified time</comment>
+                </field>
+                <field id="popup_content" translate="label" type="editor" sortOrder="30" showInDefault="1">
+                    <label>Popup Content</label>
+                    <frontend_model>Dathard\SimplePopup\Block\Adminhtml\System\Config\Form\Field\Editor</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
