@@ -19,7 +19,11 @@
                     <validate>integer no-whitespace </validate>
                     <comment>After the user closes the popup, it will reappear after the specified time</comment>
                 </field>
-                <field id="popup_content" translate="label" type="editor" sortOrder="30" showInDefault="1">
+                <field id="display_popup" translate="label" type="select" sortOrder="30" showInDefault="1">
+                    <label>Display Popup</label>
+                    <source_model>Dathard\SimplePopup\Model\Config\Source\DisplayPopup</source_model>
+                </field>
+                <field id="popup_content" translate="label" type="editor" sortOrder="40" showInDefault="1">
                     <label>Popup Content</label>
                     <frontend_model>Dathard\SimplePopup\Block\Adminhtml\System\Config\Form\Field\Editor</frontend_model>
                 </field>
