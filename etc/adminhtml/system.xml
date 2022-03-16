@@ -23,6 +23,9 @@
                     <label>Display Popup</label>
                     <source_model>Dathard\SimplePopup\Model\Config\Source\DisplayPopup</source_model>
                 </field>
+                <field id="popup_styles" translate="label" type="textarea" sortOrder="40" showInDefault="1">
+                    <label>Popup Styles</label>
+                </field>
                 <field id="popup_content" translate="label" type="editor" sortOrder="40" showInDefault="1">
                     <label>Popup Content</label>
                     <frontend_model>Dathard\SimplePopup\Block\Adminhtml\System\Config\Form\Field\Editor</frontend_model>

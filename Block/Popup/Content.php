@@ -1,12 +1,12 @@
 <?php
 
-namespace Dathard\SimplePopup\Block;
+namespace Dathard\SimplePopup\Block\Popup;
 
 use Dathard\SimplePopup\Model\Config;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 
-class Popup extends Template
+class Content extends Template
 {
     /**
      * @var Config
@@ -25,5 +25,14 @@ class Popup extends Template
     ) {
         parent::__construct($context, $data);
         $this->config = $config;
+    }
+
+    /**
+     * @return string
+     * @throws \Exception
+     */
+    public function getContent(): string
+    {
+        return $this->config->getContent();
     }
 }

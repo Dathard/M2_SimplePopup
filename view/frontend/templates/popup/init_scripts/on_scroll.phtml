@@ -1,0 +1,14 @@
+<script>
+    require([
+            'Dathard_SimplePopup/js/simple-popup'
+        ], function (popup) {
+            window.addEventListener('scroll', initDtSimplePopup);
+
+            function initDtSimplePopup() {
+                popup.openPopup();
+
+                window.removeEventListener('scroll', initDtSimplePopup);
+            }
+        }
+    );
+</script>
