@@ -6,10 +6,10 @@ define([
     return {
         popupSelector: '#dt-simple-popup-content',
 
-        openPopup: function ()
+        openPopup: function (cookieTimeout = 0)
         {
             if (! this._checkCookie()) {
-                this._open();
+                this._open(cookieTimeout);
             }
         },
         _checkCookie: function ()
@@ -18,7 +18,7 @@ define([
 
             return cookie === 'closed';
         },
-        _open: function ()
+        _open: function (cookieTimeout = 0)
         {
             var options = {
                 type: 'popup',
@@ -36,7 +36,13 @@ define([
             $(this.popupSelector).modal('openModal');
 
             $(this.popupSelector).on('modalclosed', function() {
-                $.cookie('dt_simple_popup', 'closed');
+                if (cookieExpires > 0) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (cookieExpires * 1000));
+                    $.cookie('dt_simple_popup', 'closed', { expires: date });
+                } else {
+                    $.cookie('dt_simple_popup', 'closed');
+                }
             });
         }
     }

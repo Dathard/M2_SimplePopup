@@ -2,6 +2,7 @@
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
+            <block class="Dathard\SimplePopup\Block\Popup\Styles" name="simple_popup.css" template="Dathard_SimplePopup::popup/styles.phtml"/>
             <block class="Dathard\SimplePopup\Block\Popup\Content" name="simple_popup.content" template="Dathard_SimplePopup::popup/content.phtml"/>
             <block class="Dathard\SimplePopup\Block\Popup" name="simple_popup" template="Dathard_SimplePopup::popup/init_scripts/on_scroll.phtml"/>
         </referenceContainer>

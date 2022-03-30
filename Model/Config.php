@@ -7,6 +7,8 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 
 class Config
 {
+    const XML_PATH_COOKIE_TIMEOUT = 'simplepopup/general/cookie_timeout';
+    const XML_PATH_STYLES = 'simplepopup/general/popup_styles';
     const XML_PATH_CONTENT = 'simplepopup/general/popup_content';
 
     /**
@@ -29,6 +31,22 @@ class Config
     ) {
         $this->filterProvider = $filterProvider;
         $this->scopeConfig = $scopeConfig;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCookieTimeout(): int
+    {
+        return $this->scopeConfig->getValue(self::XML_PATH_COOKIE_TIMEOUT);
+    }
+
+    /**
+     * @return string
+     */
+    public function getStyles(): string
+    {
+        return (string) $this->scopeConfig->getValue(self::XML_PATH_STYLES);
     }
 
     /**

@@ -1,12 +1,12 @@
 <?php
 
-namespace Dathard\SimplePopup\Block;
+namespace Dathard\SimplePopup\Block\Popup;
 
 use Dathard\SimplePopup\Model\Config;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 
-class Popup extends Template
+class Styles extends Template
 {
     /**
      * @var Config
@@ -28,10 +28,12 @@ class Popup extends Template
     }
 
     /**
-     * @return int
+     * @return string
+     * @throws \Exception
      */
-    public function getCookieTimeout(): int
+    public function getCode(): string
     {
-        return $this->config->getCookieTimeout();
+        return $this->config->getStyles();
     }
 }
+

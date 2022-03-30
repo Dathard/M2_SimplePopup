@@ -1,3 +1,4 @@
+<?php /** @var \Dathard\SimplePopup\Block\Popup $block */ ?>
 <script>
     require([
             'Dathard_SimplePopup/js/simple-popup'
@@ -5,7 +6,7 @@
             window.addEventListener('scroll', initDtSimplePopup);
 
             function initDtSimplePopup() {
-                popup.openPopup();
+                popup.openPopup(<?= $block->getCookieTimeout() ?>);
 
                 window.removeEventListener('scroll', initDtSimplePopup);
             }
